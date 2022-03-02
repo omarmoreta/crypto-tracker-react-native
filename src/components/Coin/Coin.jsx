@@ -3,7 +3,7 @@ import { Text, View, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles"
 
-const Coin = () => {
+const Coin = ({data}) => {
   return (
     <View style={styles.coinContainer}>
         <Image
