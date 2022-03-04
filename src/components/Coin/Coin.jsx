@@ -3,13 +3,12 @@ import { Text, View, Image } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import styles from "./styles"
 
-const Coin = ({data}) => {
+const Coin = ({ marketCoin}) => {
+  const { image, name, current_price, market_cap_rank, price_chance_percentage_24h, symbol, market_cap } = marketCoin
   return (
     <View style={styles.coinContainer}>
         <Image
-          source={{
-            uri: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579",
-          }}
+          source={{ uri: image }}
           style={{
             height: 30,
             width: 30,
@@ -18,7 +17,7 @@ const Coin = ({data}) => {
           }}
         />
         <View>
-          <Text style={styles.title}>Bitcoin</Text>
+          <Text style={styles.title}>{name}</Text>
           <View style={{ flexDirection: "row" }}>
             <View style={styles.rankContainer}>
               <Text style={styles.rank}>1</Text>
