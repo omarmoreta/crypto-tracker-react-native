@@ -5,6 +5,7 @@ import styles from "./styles"
 
 const Coin = ({ marketCoin }) => {
   const { image, name, current_price, market_cap_rank, price_change_percentage_24h, symbol, market_cap } = marketCoin
+  const percentageColor = price_change_percentage_24h < 0 ? "#ea3943" : "#16c784"
   const normalizeMarketCap = (marketCap) => {
       if(marketCap > 1000000000000) {
         return `${Math.floor(marketCap / 1000000000000)} T`  
@@ -39,7 +40,7 @@ const Coin = ({ marketCoin }) => {
             <AntDesign
               name="caretdown"
               size={12}
-              color="white"
+              color={percentageColor}
               style={{ alignSelf: "center", marginRight: 5 }}
             />
             <Text style={styles.text}>{price_change_percentage_24h.toFixed(2)}%</Text>
