@@ -38,12 +38,12 @@ const Coin = ({ marketCoin }) => {
             </View>
             <Text style={styles.text}>{symbol.toUpperCase()}</Text>
             <AntDesign
-              name="caretdown"
+              name={price_change_percentage_24h < 0 ? "caretdown" : "caretup"}
               size={12}
               color={percentageColor}
               style={{ alignSelf: "center", marginRight: 5 }}
             />
-            <Text style={styles.text}>{price_change_percentage_24h.toFixed(2)}%</Text>
+            <Text style={{color: percentageColor}}>{price_change_percentage_24h.toFixed(2)}%</Text>
           </View>
         </View>
         <View style={{ marginLeft: "auto", alignItems: "flex-end" }}>
